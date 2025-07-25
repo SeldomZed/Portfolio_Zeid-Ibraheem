@@ -133,11 +133,13 @@ body {
 /* Section Styles */
 section {
     padding: 60px 0;
-    display: none;
+    display: block;
+    /* Changer de 'none' à 'block' */
 }
 
 section.active {
     display: block;
+    /* Garder block au lieu de changer la visibility */
 }
 
 section h2 {

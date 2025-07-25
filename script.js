@@ -15,20 +15,40 @@ document.addEventListener('DOMContentLoaded', function () {
             // Add active class to clicked link
             this.classList.add('active');
 
-            // Hide all sections
-            sections.forEach(section => section.classList.remove('active'));
-
-            // Show target section
+            // Ne plus cacher les sections - juste scroll vers la section
             const targetSection = this.getAttribute('href').substring(1);
             const target = document.getElementById(targetSection);
             if (target) {
-                target.classList.add('active');
-
-                // Scroll to top of section smoothly
+                // Scroll to target section smoothly
                 target.scrollIntoView({
                     behavior: 'smooth',
                     block: 'start'
                 });
+            }
+        });
+    });
+
+    // Update active nav on scroll
+    window.addEventListener('scroll', () => {
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.nav-links a');
+
+        let current = '';
+
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop - 100;
+            const sectionHeight = section.clientHeight;
+
+            if (window.pageYOffset >= sectionTop &&
+                window.pageYOffset < sectionTop + sectionHeight) {
+                current = section.getAttribute('id');
+            }
+        });
+
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === `#${current}`) {
+                link.classList.add('active');
             }
         });
     });
