@@ -6,776 +6,347 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Zeid IBRAHEEM - Portfolio</title>
     <meta name="description"
-        content="Portfolio de Zeid IBRAHEEM - Futur diplômé en Technologies de l'Information, passionné par le développement d'applications">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        content="Portfolio de Zeid IBRAHEEM - Étudiant en BUT Informatique, passionné par le développement d'applications">
+    <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
-
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: 'Poppins', sans-serif;
-            background-color: #1c1c1d;
-            color: #ffffff;
-            line-height: 1.6;
-        }
-
-        .portfolio-container {
-            min-height: 100vh;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 24px;
-        }
-
-        .header-section {
-            background: rgba(28, 28, 29, 0.95);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 12px;
-            padding: 32px;
-            margin-bottom: 24px;
-            text-align: center;
-        }
-
-        .profile-info {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 24px;
-            flex-wrap: wrap;
-        }
-
-        .profile-image {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            overflow: hidden;
-            background: #374151;
-            border: 4px solid #e4a175;
-        }
-
-        .profile-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .profile-text h1 {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 8px;
-            background: linear-gradient(135deg, #e4a175 0%, #d4914b 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .subtitle {
-            color: #9ca3af;
-            font-size: 1.2rem;
-            margin-bottom: 16px;
-        }
-
-        .status {
-            background: #2563eb;
-            color: white;
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            display: inline-block;
-        }
-
-        .main-layout {
-            display: flex;
-            gap: 24px;
-        }
-
-        .sidebar {
-            width: 320px;
-            background: rgba(28, 28, 29, 0.95);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 12px;
-            padding: 24px;
-            height: fit-content;
-            position: sticky;
-            top: 24px;
-        }
-
-        .contact-info {
-            margin-bottom: 32px;
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            padding: 12px;
-            background: rgba(55, 65, 81, 0.5);
-            border-radius: 8px;
-            margin-bottom: 12px;
-        }
-
-        .contact-icon {
-            width: 24px;
-            height: 24px;
-            color: #e4a175;
-            font-size: 1.2rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .contact-details a {
-            color: #ffffff;
-            text-decoration: none;
-            font-size: 0.9rem;
-            transition: color 0.3s ease;
-        }
-
-        .contact-details a:hover {
-            color: #e4a175;
-        }
-
-        .social-links {
-            display: flex;
-            gap: 12px;
-            margin-bottom: 32px;
-            justify-content: center;
-        }
-
-        .social-link {
-            width: 48px;
-            height: 48px;
-            background: #374151;
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-            color: #ffffff;
-            font-weight: 600;
-            transition: all 0.3s ease;
-        }
-
-        .social-link:hover {
-            background: #e4a175;
-            transform: translateY(-2px);
-        }
-
-        .sidebar-nav {
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-        }
-
-        .nav-link {
-            display: block;
-            padding: 12px 16px;
-            color: #ffffff;
-            text-decoration: none;
-            border-radius: 8px;
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
-
-        .nav-link:hover {
-            background: #374151;
-            color: #e4a175;
-        }
-
-        .nav-link.active {
-            background: #e4a175;
-            color: #000000;
-        }
-
-        .main-content {
-            flex: 1;
-        }
-
-        .content-section {
-            background: rgba(28, 28, 29, 0.95);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 12px;
-            padding: 32px;
-            display: none;
-        }
-
-        .content-section.active {
-            display: block;
-        }
-
-        .section-title {
-            font-size: 2rem;
-            font-weight: 600;
-            margin-bottom: 24px;
-            color: #e4a175;
-        }
-
-        .title-divider {
-            width: 64px;
-            height: 4px;
-            background: linear-gradient(135deg, #e4a175 0%, #d4914b 100%);
-            border-radius: 2px;
-            margin-bottom: 24px;
-        }
-
-        .about-text {
-            color: #d1d5db;
-            margin-bottom: 32px;
-            font-size: 1.1rem;
-            line-height: 1.8;
-        }
-
-        .skills-section {
-            margin-bottom: 32px;
-        }
-
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 16px;
-            margin-bottom: 24px;
-        }
-
-        .skill-category {
-            background: rgba(55, 65, 81, 0.5);
-            padding: 20px;
-            border-radius: 12px;
-        }
-
-        .skill-category h4 {
-            color: #e4a175;
-            margin-bottom: 12px;
-            font-size: 1.1rem;
-        }
-
-        .skill-list {
-            list-style: none;
-        }
-
-        .skill-list li {
-            padding: 4px 0;
-            color: #d1d5db;
-            font-size: 0.9rem;
-        }
-
-        .skill-list li:before {
-            content: "▸";
-            color: #e4a175;
-            margin-right: 8px;
-        }
-
-        .timeline {
-            position: relative;
-            padding-left: 30px;
-        }
-
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 15px;
-            top: 0;
-            bottom: 0;
-            width: 2px;
-            background: #4b5563;
-        }
-
-        .timeline-item {
-            position: relative;
-            margin-bottom: 32px;
-            background: rgba(55, 65, 81, 0.3);
-            padding: 24px;
-            border-radius: 12px;
-        }
-
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: -37px;
-            top: 24px;
-            width: 12px;
-            height: 12px;
-            background: #e4a175;
-            border-radius: 50%;
-        }
-
-        .timeline-item h3 {
-            color: #e4a175;
-            font-size: 1.2rem;
-            margin-bottom: 8px;
-        }
-
-        .timeline-item .company {
-            color: #9ca3af;
-            font-weight: 500;
-            margin-bottom: 8px;
-        }
-
-        .timeline-item .date {
-            background: #374151;
-            padding: 4px 12px;
-            border-radius: 16px;
-            font-size: 0.8rem;
-            display: inline-block;
-            margin-bottom: 12px;
-        }
-
-        .timeline-item .description {
-            color: #d1d5db;
-            line-height: 1.6;
-        }
-
-        .timeline-item ul {
-            margin-top: 12px;
-            padding-left: 20px;
-        }
-
-        .timeline-item li {
-            color: #d1d5db;
-            margin-bottom: 6px;
-            font-size: 0.9rem;
-        }
-
-        .contact-form {
-            background: rgba(55, 65, 81, 0.3);
-            padding: 32px;
-            border-radius: 12px;
-            max-width: 600px;
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            color: #e4a175;
-            font-weight: 500;
-        }
-
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 12px;
-            background: #374151;
-            border: 1px solid #4b5563;
-            border-radius: 8px;
-            color: #ffffff;
-            font-family: inherit;
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: #e4a175;
-        }
-
-        .btn-primary {
-            background: linear-gradient(135deg, #e4a175 0%, #d4914b 100%);
-            color: #000000;
-            border: none;
-            padding: 12px 32px;
-            border-radius: 8px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: opacity 0.3s ease;
-        }
-
-        .btn-primary:hover {
-            opacity: 0.9;
-        }
-
-        @media (max-width: 768px) {
-            .main-layout {
-                flex-direction: column;
-            }
-
-            .sidebar {
-                width: 100%;
-                position: static;
-            }
-
-            .profile-info {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .profile-text h1 {
-                font-size: 2rem;
-            }
-
-            .skills-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .timeline {
-                padding-left: 20px;
-            }
-
-            .timeline::before {
-                left: 10px;
-            }
-
-            .timeline-item::before {
-                left: -27px;
-            }
-        }
-    </style>
 </head>
 
 <body>
-    <div class="portfolio-container">
-        <header class="header-section">
-            <div class="profile-info">
+    <!-- Header Section -->
+    <header class="header">
+        <div class="container">
+            <div class="profile-section">
                 <div class="profile-image">
                     <img src="avatar.png" alt="Zeid IBRAHEEM">
                 </div>
-                <div class="profile-text">
+                <div class="profile-info">
                     <h1>Zeid IBRAHEEM</h1>
-                    <p class="subtitle"> Vers une carrière en Informatique</p>
+                    <p class="role">Étudiant BUT Informatique</p>
                 </div>
             </div>
-        </header>
+            <button class="show-contacts-btn">Voir Contacts</button>
+        </div>
+    </header>
 
-        <div class="main-layout">
-            <aside class="sidebar">
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <ul class="nav-links">
+                <li><a href="#about" class="active">À propos</a></li>
+                <li><a href="#experience">Expérience</a></li>
+                <li><a href="#competences">Compétences</a></li>
+                <li><a href="#formation">Formation</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <h2>À propos de moi</h2>
+            <div class="about-content">
+                <p>Actuellement étudiant en première année de BUT Informatique, je suis à la recherche d'un contrat en
+                    alternance à partir de septembre 2025 dans le développement d'applications.</p>
+                <p>Passionné par la tech, je souhaite mettre mes compétences en pratique, à vos côtés. Dynamique et
+                    motivé, je suis prêt à m'investir pleinement et à progresser sur des projets concrets.</p>
+            </div>
+
+            <!-- Stats -->
+            <div class="stats-section">
+                <div class="stats-cards">
+                    <div class="stat-card">
+                        <h4>1+</h4>
+                        <p>ANNÉE D'ÉTUDES</p>
+                    </div>
+                    <div class="stat-card">
+                        <h4>3+</h4>
+                        <p>PROJETS RÉALISÉS</p>
+                    </div>
+                    <div class="stat-card">
+                        <h4>6+</h4>
+                        <p>TECHNOLOGIES MAÎTRISÉES</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Langues -->
+            <div class="languages-section">
+                <h3>Langues</h3>
+                <div class="language-cards">
+                    <div class="language-card">
+                        <h4>Français</h4>
+                        <p>Langue maternelle</p>
+                    </div>
+                    <div class="language-card">
+                        <h4>Anglais</h4>
+                        <p>Niveau avancé</p>
+                    </div>
+                    <div class="language-card">
+                        <h4>Arabe</h4>
+                        <p>Courant à l'oral</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="experience-section">
+        <div class="container">
+            <h2>Expérience Professionnelle</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">Sept. 2024 - Juin 2025</div>
+                    <div class="timeline-content">
+                        <h3>Alternant Développeur d'Applications Mobiles</h3>
+                        <h4>Enodia - Nice</h4>
+                        <p>Développement d'applications mobiles en environnement professionnel.</p>
+                        <ul>
+                            <li>Technologies : Flutter, Android Studio, Dart</li>
+                            <li>Manipulation d'APIs via Postman</li>
+                            <li>Stockage et livraison, modification des statuts produits</li>
+                            <li>Design UI basé sur des références existantes</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">Jan. 2022 - Déc. 2023</div>
+                    <div class="timeline-content">
+                        <h3>Créateur de Sites Web</h3>
+                        <h4>Fiverr et Upwork - Remote</h4>
+                        <p>Proposition de services en création de sites web sur les plateformes Fiverr et Upwork.</p>
+                        <ul>
+                            <li>Développement de solutions web sur mesure</li>
+                            <li>Gestion de projets clients</li>
+                            <li>Technologies utilisées : HTML, CSS, JavaScript</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">Mai 2021</div>
+                    <div class="timeline-content">
+                        <h3>Assistant en Analyse de Données Immobilières</h3>
+                        <h4>Capital Real Estate Group - Remote/Miami</h4>
+                        <p>Analyse de données immobilières et collaboration avec courtier commercial.</p>
+                        <ul>
+                            <li>Analyse de données (Excel, Truthfinder)</li>
+                            <li>Mise à jour de base de données (+700 adresses)</li>
+                            <li>Collaboration avec Calum Winsor, courtier immobilier commercial</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="competences" class="skills-section">
+        <div class="container">
+            <h2>Compétences Techniques</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <div class="skill-icon">💻</div>
+                    <h3>Langages de Programmation</h3>
+                    <ul>
+                        <li>Dart, Java</li>
+                        <li>JavaScript, HTML, CSS</li>
+                        <li>Python, SQL</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <div class="skill-icon">🛠️</div>
+                    <h3>Frameworks & Outils</h3>
+                    <ul>
+                        <li>Flutter, Android Studio</li>
+                        <li>Git, GitHub, GitLab</li>
+                        <li>Postman</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <div class="skill-icon">🗄️</div>
+                    <h3>Bases de Données</h3>
+                    <ul>
+                        <li>SQL, SQLite</li>
+                        <li>ObjectBox</li>
+                        <li>Architecture modulaire</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <div class="skill-icon">🌐</div>
+                    <h3>Réseaux & Cybersécurité</h3>
+                    <ul>
+                        <li>Systèmes d'exploitation</li>
+                        <li>Services réseaux</li>
+                        <li>Architecture ordinateurs</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Soft Skills -->
+            <div class="soft-skills">
+                <h3>Qualités Humaines</h3>
+                <div class="soft-skills-grid">
+                    <div class="soft-skill">
+                        <span class="skill-emoji">💪</span>
+                        <span>Persévérance</span>
+                    </div>
+                    <div class="soft-skill">
+                        <span class="skill-emoji">🔥</span>
+                        <span>Passionné</span>
+                    </div>
+                    <div class="soft-skill">
+                        <span class="skill-emoji">👥</span>
+                        <span>Leadership</span>
+                    </div>
+                    <div class="soft-skill">
+                        <span class="skill-emoji">🤝</span>
+                        <span>Esprit d'équipe</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Interests -->
+            <div class="interests">
+                <h3>Centres d'Intérêts</h3>
+                <div class="interests-grid">
+                    <div class="interest-card">
+                        <div class="interest-icon">⚡</div>
+                        <h4>Technologie</h4>
+                        <ul>
+                            <li>Informatique</li>
+                            <li>Blockchain et Web3</li>
+                            <li>Finance et Économie</li>
+                        </ul>
+                    </div>
+                    <div class="interest-card">
+                        <div class="interest-icon">🎯</div>
+                        <h4>Loisirs</h4>
+                        <ul>
+                            <li>Natation</li>
+                            <li>Musculation</li>
+                            <li>Biologie</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Formation Section -->
+    <section id="formation" class="formation-section">
+        <div class="container">
+            <h2>Formation</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">Sept. 2024 - Présent</div>
+                    <div class="timeline-content">
+                        <h3>BUT Informatique</h3>
+                        <h4>IUT de Nice</h4>
+                        <p>Formation en développement d'applications et technologies de l'information.</p>
+                        <ul>
+                            <li>Modules : Développement orienté objet (Java), IHM, SQL</li>
+                            <li>Qualité logicielle, gestion de projets, anglais pro</li>
+                            <li>Projet : Jeu vidéo multijoueur au tour par tour</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">Sept. 2023 - Juil. 2024</div>
+                    <div class="timeline-content">
+                        <h3>Baccalauréat Général</h3>
+                        <h4>Lycée Général - Nice</h4>
+                        <p>Spécialités : Mathématiques & NSI (Numérique et Sciences Informatiques)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2>Me Contacter</h2>
+            <div class="contact-content">
                 <div class="contact-info">
                     <div class="contact-item">
-                        <div class="contact-icon">📧</div>
-                        <div class="contact-details">
+                        <span class="contact-icon">📧</span>
+                        <div>
+                            <strong>Email</strong>
                             <a href="mailto:zeidibraheem7@gmail.com">zeidibraheem7@gmail.com</a>
                         </div>
                     </div>
                     <div class="contact-item">
-                        <div class="contact-icon">👨‍💻</div>
-                        <div class="contact-details">
-                            <a href="https://github.com/SeldomZed" target="_blank">Github</a>
+                        <span class="contact-icon">📱</span>
+                        <div>
+                            <strong>Téléphone</strong>
+                            <a href="tel:+33623377739">06 23 37 77 39</a>
                         </div>
                     </div>
                     <div class="contact-item">
-                        <div class="contact-icon">🔗</div>
-                        <div class="contact-details">
-                            <a href="https://www.linkedin.com/in/zeid-ibraheem/" target="_blank">Linkedin</a>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">📱</div>
-                        <div class="contact-details">
-                            <a href="tel:+33629377759">06 23 37 77 39</a>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">📍</div>
-                        <div class="contact-details">
+                        <span class="contact-icon">📍</span>
+                        <div>
+                            <strong>Localisation</strong>
                             <span>Nice, France</span>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">💼</span>
+                        <div>
+                            <strong>LinkedIn</strong>
+                            <a href="https://www.linkedin.com/in/zeid-ibraheem/" target="_blank">Profil LinkedIn</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">👨‍💻</span>
+                        <div>
+                            <strong>GitHub</strong>
+                            <a href="https://github.com/SeldomZed" target="_blank">SeldomZed</a>
                         </div>
                     </div>
                 </div>
 
-
-
-                <!-- Navigation -->
-                <nav class="sidebar-nav">
-                    <a href="#" class="nav-link active" data-section="about">À propos</a>
-                    <a href="#" class="nav-link" data-section="experience">Expérience</a>
-                    <a href="#" class="nav-link" data-section="competences">Compétences</a>
-                    <a href="#" class="nav-link" data-section="formation">Formation</a>
-                </nav>
-            </aside>
-
-            <!-- Main Content -->
-            <main class="main-content">
-                <section id="about" class="content-section active">
-                    <h2 class="section-title">À propos</h2>
-                    <div class="title-divider"></div>
-
-                    <div class="about-text">
-                        <p>Actuellement étudiant en première année de BUT Informatique, je suis à la recherche d'un
-                            contrat en alternance à partir de septembre 2025 dans le développement d'applications.</p>
-
-                        <p>Passionné par la tech, je souhaite mettre mes compétences en pratique, à vos côtés. Dynamique
-                            et motivé, je suis prêt à m'investir pleinement et à progresser sur des projets concrets.
-                        </p>
-                    </div>
-
-                    <div class="skills-section">
-                        <h3>Langues</h3>
-                        <br>
-
-                        <div class="skills-grid">
-                            <div class="skill-category">
-                                <h4>Français</h4>
-                                <p>Langue maternelle</p>
-                            </div>
-                            <div class="skill-category">
-                                <h4>Anglais</h4>
-                                <p>Niveau avancé</p>
-                            </div>
-                            <div class="skill-category">
-                                <h4>Arabe</h4>
-                                <p>Courant à l'oral</p>
-                            </div>
+                <div class="contact-form">
+                    <h3>Envoyez-moi un message</h3>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Nom complet</label>
+                            <input type="text" id="name" name="name" required>
                         </div>
-                    </div>
-                </section>
-
-                <section id="experience" class="content-section">
-                    <h2 class="section-title">Expérience</h2>
-                    <div class="title-divider"></div>
-
-                    <div class="timeline">
-                        <div class="timeline-item">
-                            <h3>Alternant Développeur d'Applications Mobiles</h3>
-                            <div class="company">Enodia - Nice</div>
-                            <div class="date">Sept. 2024 - Juin 2025</div>
-                            <div class="description">
-                                <p>Développement d'applications mobiles en environnement professionnel.</p>
-                                <ul>
-                                    <li>Technologies : Flutter, Android Studio, Dart</li>
-                                    <li>Manipulation d'APIs via Postman</li>
-                                    <li>Stockage et livraison, modification des statuts produits</li>
-                                    <li>Design UI basé sur des références existantes</li>
-                                </ul>
-                            </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
                         </div>
-
-                        <div class="timeline-item">
-                            <h3>Créateur de Sites Web</h3>
-                            <div class="company">Fiverr et Upwork - Remote</div>
-                            <div class="date">Jan. 2022 - Déc. 2023</div>
-                            <div class="description">
-                                <p>Proposition de services en création de sites web sur les plateformes Fiverr et
-                                    Upwork.</p>
-                                <ul>
-                                    <li>Développement de solutions web sur mesure</li>
-                                    <li>Gestion de projets clients</li>
-                                    <li>Technologies utilisées : HTML, CSS, JavaScript</li>
-                                </ul>
-                            </div>
+                        <div class="form-group">
+                            <label for="subject">Sujet</label>
+                            <input type="text" id="subject" name="subject" required>
                         </div>
-
-                        <div class="timeline-item">
-                            <h3>Assistant en Analyse de Données Immobilières</h3>
-                            <div class="company">Capital Real Estate Group - Remote/Miami</div>
-                            <div class="date">Mai 2021</div>
-                            <div class="description">
-                                <p>Analyse de données immobilières et collaboration avec courtier commercial.</p>
-                                <ul>
-                                    <li>Analyse de données (Excel, Truthfinder)</li>
-                                    <li>Mise à jour de base de données (+700 adresses)</li>
-                                    <li>Collaboration avec Calum Winsor, courtier immobilier commercial</li>
-                                </ul>
-                            </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
                         </div>
-                    </div>
-                </section>
-
-                <section id="competences" class="content-section">
-                    <h2 class="section-title">Compétences</h2>
-                    <div class="title-divider"></div>
-
-                    <div class="skills-grid">
-                        <div class="skill-category">
-                            <h4>Langages</h4>
-                            <ul class="skill-list">
-                                <li>Dart, Java</li>
-                                <li>JavaScript, HTML, CSS</li>
-                                <li>Python, SQL</li>
-                            </ul>
-                        </div>
-
-                        <div class="skill-category">
-                            <h4>Frameworks & Outils</h4>
-                            <ul class="skill-list">
-                                <li>Flutter, Android Studio</li>
-                                <li>Git, GitHub, GitLab</li>
-                                <li>Postman</li>
-                            </ul>
-                        </div>
-
-                        <div class="skill-category">
-                            <h4>Bases de données</h4>
-                            <ul class="skill-list">
-                                <li>SQL, SQLite</li>
-                                <li>ObjectBox</li>
-                                <li>Architecture modulaire</li>
-                            </ul>
-                        </div>
-                        <div class="skill-category">
-                            <h4>Réseaux & Cyber</h4>
-                            <ul class="skill-list">
-                                <li>Systèmes d'exploitation</li>
-                                <li>Services réseaux</li>
-                                <li>Méthodes numériques</li>
-                                <li>Architecture ordinateurs</li>
-                            </ul>
-                        </div>
-                        <div class="skill-category">
-                            <h4>Qualités humaines</h4>
-                            <ul class="skill-list">
-                                <li>Persévérance</li>
-                                <li>Passionné</li>
-                                <li>Leadership</li>
-                                <li>Esprit d'équipe</li>
-                            </ul>
-                        </div>
-
-
-                    </div>
-
-                    <div class="skills-section">
-                        <h3>Centres d'intérêts</h3>
-                        <div class="skills-grid">
-                            <div class="skill-category">
-                                <h4>Technologie</h4>
-                                <ul class="skill-list">
-                                    <li>Informatique</li>
-                                    <li>Blockchain et Web3</li>
-                                    <li>Finance et Économie</li>
-                                </ul>
-                            </div>
-                            <div class="skill-category">
-                                <h4>Loisirs</h4>
-                                <ul class="skill-list">
-                                    <li>Natation</li>
-                                    <li>Musculation</li>
-                                    <li>Biologie</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <section id="formation" class="content-section">
-                    <h2 class="section-title">Formation</h2>
-                    <div class="title-divider"></div>
-
-                    <div class="timeline">
-                        <div class="timeline-item">
-                            <h3>BUT Informatique</h3>
-                            <div class="company">IUT de Nice</div>
-                            <div class="date">Sept. 2024 - Présent</div>
-                            <div class="description">
-                                <p>Formation en développement d'applications et technologies de l'information.</p>
-                                <ul>
-                                    <li>Modules : Développement orienté objet (Java), IHM, SQL</li>
-                                    <li>Qualité logicielle, gestion de projets, anglais pro</li>
-                                    <li>Projet : Jeu vidéo multijoueur au tour par tour</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <div class="timeline-item">
-                            <h3>Baccalauréat Général</h3>
-                            <div class="company">Lycée Général - Nice</div>
-                            <div class="date">Sept. 2023 - Juil. 2024</div>
-                            <div class="description">
-                                <p>Spécialités : Mathématiques & NSI (Numérique et Sciences Informatiques)</p>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <section id="contact" class="content-section">
-                    <h2 class="section-title">Contact</h2>
-                    <div class="title-divider"></div>
-
-                    <div class="contact-form">
-                        <h3>Contactez-moi</h3>
-                        <form id="contactForm">
-                            <div class="form-group">
-                                <label for="name">Nom complet</label>
-                                <input type="text" id="name" name="name" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="email">Email</label>
-                                <input type="email" id="email" name="email" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="subject">Sujet</label>
-                                <input type="text" id="subject" name="subject" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="message">Message</label>
-                                <textarea id="message" name="message" rows="5" required></textarea>
-                            </div>
-                            <button type="submit" class="btn-primary">Envoyer le message</button>
-                        </form>
-                    </div>
-                </section>
-            </main>
+                        <button type="submit" class="btn-primary">Envoyer le message</button>
+                    </form>
+                </div>
+            </div>
         </div>
-    </div>
+    </section>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const navLinks = document.querySelectorAll('.nav-link');
-            const sections = document.querySelectorAll('.content-section');
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Zeid IBRAHEEM</p>
+        </div>
+    </footer>
 
-            navLinks.forEach(link => {
-                link.addEventListener('click', function (e) {
-                    e.preventDefault();
-
-                    navLinks.forEach(l => l.classList.remove('active'));
-                    this.classList.add('active');
-
-                    sections.forEach(section => section.classList.remove('active'));
-
-                    const targetSection = this.getAttribute('data-section');
-                    document.getElementById(targetSection).classList.add('active');
-                });
-            });
-
-            const contactForm = document.getElementById('contactForm');
-            contactForm.addEventListener('submit', function (e) {
-                e.preventDefault();
-
-                const formData = new FormData(this);
-                const name = formData.get('name');
-                const email = formData.get('email');
-                const subject = formData.get('subject');
-                const message = formData.get('message');
-
-                const mailtoLink = `mailto:zeidibraheem7@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Nom: ${name}\nEmail: ${email}\n\nMessage:\n${message}`)}`;
-
-                window.location.href = mailtoLink;
-
-                alert('Votre client email va s\'ouvrir avec le message pré-rempli !');
-            });
-
-            const observerOptions = {
-                threshold: 0.1,
-                rootMargin: '0px 0px -50px 0px'
-            };
-
-            const observer = new IntersectionObserver(function (entries) {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.opacity = '1';
-                        entry.target.style.transform = 'translateY(0)';
-                    }
-                });
-            }, observerOptions);
-
-            document.querySelectorAll('.timeline-item').forEach(item => {
-                item.style.opacity = '0';
-                item.style.transform = 'translateY(20px)';
-                item.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-                observer.observe(item);
-            });
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 
 </html>
