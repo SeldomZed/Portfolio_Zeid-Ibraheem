@@ -53,13 +53,13 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    // Show contacts button functionality
-    const showContactsBtn = document.querySelector('.show-contacts-btn');
-    if (showContactsBtn) {
-        showContactsBtn.addEventListener('click', function () {
-            showContactModal();
-        });
-    }
+    // // Show contacts button functionality
+    // const showContactsBtn = document.querySelector('.show-contacts-btn');
+    // if (showContactsBtn) {
+    //     showContactsBtn.addEventListener('click', function () {
+    //         showContactModal();
+    //     });
+    // }
 
     // Contact form functionality
     const contactForm = document.getElementById('contactForm');
@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded', function () {
             const message = formData.get('message');
 
             // Create mailto link
-            const mailtoLink = `mailto:zeidibraheem7@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Nom: ${name}\nEmail: ${email}\n\nMessage:\n${message}`)}`;
+            const mailtoLink = `mailto:zeidibraheem07@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Nom: ${name}\nEmail: ${email}\n\nMessage:\n${message}`)}`;
 
             // Open email client
             window.location.href = mailtoLink;
@@ -149,7 +149,7 @@ function showContactModal() {
             <div class="contact-details">
                 <div class="modal-contact-item">
                     <strong>📧 Email:</strong>
-                    <a href="mailto:zeidibraheem7@gmail.com">zeidibraheem7@gmail.com</a>
+                    <a href="mailto:zeidibraheem07@gmail.com">zeidibraheem07@gmail.com</a>
                 </div>
                 <div class="modal-contact-item">
                     <strong>📱 Téléphone:</strong>
